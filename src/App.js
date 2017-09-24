@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import './loading.css';
 import './Anim.css';
 import ListBooks from './ListBooks';
 import SearchBooks from './SearchBooks';
