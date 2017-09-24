@@ -26,13 +26,18 @@ class BooksApp extends React.Component {
     this.setState(state => {
       prevState = state;
 
+      const hasBook = state.books.some(bookItem => bookItem.id === book.id);
+      if (!hasBook) {
+        return {books: state.books.concat([ book ])};
+      }
+
       return {
         books: state.books.map(bookItem => {
           if (bookItem.id === book.id) {
             return book;
           }
           return bookItem;
-        })
+        }).filter(bookItem => bookItem.shelf && bookItem.shelf !== 'none')
       };
     });
 
