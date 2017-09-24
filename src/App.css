@@ -6,6 +6,16 @@ body {
 }
 body, .app {
   background: white;
+  height:100vh;
+  overflow-y: auto;
+}
+
+.app.is-search {
+  overflow:hidden;
+}
+
+.app.is-search .list-books {
+  filter: blur(3px);
 }
 
 /* main page */
@@ -83,6 +93,15 @@ body, .app {
   font-size: 1.25em;
   border: none;
   outline: none;
+}
+.search-books {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  z-index: 1;
+  background:rgba(255, 255, 255, 0.86);
 }
 
 .close-search {
