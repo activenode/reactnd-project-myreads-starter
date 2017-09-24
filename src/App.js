@@ -16,7 +16,6 @@ class BooksApp extends React.Component {
   componentDidMount() {
     BooksAPI.getAll().then(books => {
       this.setState({books: books});
-      console.log(books);
     }).catch(() => this.setState({books: []})); //TODO: add errorneous on catch()
   }
 
