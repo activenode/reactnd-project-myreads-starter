@@ -49,7 +49,7 @@ class BooksApp extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Route render={props=>{
+        <Route render={props => {
           let isSearch = false;
           if (props.location.pathname.match('/search')) {
             isSearch = true;
@@ -63,7 +63,11 @@ class BooksApp extends React.Component {
               transitionName="fade"
               transitionEnterTimeout={150}
               transitionLeaveTimeout={150}>
-              <Route exact path="/search" key={props.location.key} location={props.location} component={SearchBooks} />
+              <Route exact
+                path="/search"
+                key={props.location.key}
+                location={props.location}
+                render={()=><SearchBooks books={this.state.books} updateBook={book => this.updateBook(book)} />} />
             </CSSTransitionGroup>
           </div>)
         }} />
